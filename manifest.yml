@@ -1,0 +1,19 @@
+---
+applications:
+- name : destapp
+  routes:
+    - route: python-12345-140181.cfapps.us10.hana.ondemand.com
+  buildpacks:
+  - python_buildpack
+  random-route: true
+  path: .
+  memory: 128M
+  disk_quota: 512M
+  command: python server.py 
+  instances: 2
+  env:
+    AUTHOR: Abc
+    DATE: Thursday
+  services:
+    - destination1
+    - xsuaa-demo 
